@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><title>Cart</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header"><div class="container nav">
+  <div class="brand"><div class="logo"><img src="images/logo.png" alt="logo" style="width:100%;height:100%;object-fit:cover"></div><div><strong style="color:var(--accent-1)">Lazos Florales D' Amour</strong></div></div>
+  <nav class="links"><a href="index.html">Home</a><a href="catalog.html">Catalog</a><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></nav>
+</div></header>
+
+<main class="container">
+  <h2 class="section-title">Your Cart</h2>
+  <div id="cart-items"></div>
+
+  <div class="card" style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
+    <div><strong>Total:</strong> <span id="cart-total">$0.00</span></div>
+    <div>
+      <button onclick="localStorage.removeItem('lf_cart'); location.reload();" style="padding:8px 12px;border-radius:8px">Clear cart</button>
+      <button onclick="alert('This is a demo checkout. Implement server-side to process payments.')" style="padding:8px 12px;border-radius:8px;background:var(--accent-1);color:#fff;margin-left:8px">Checkout</button>
+    </div>
+  </div>
+
+  <footer style="margin-top:28px"><small>© 2025 Lazos Florales D' Amour</small></footer>
+</main>
+
+<script src="scripts.js"></script>
+</body>
+</html>
