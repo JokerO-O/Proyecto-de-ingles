@@ -1,62 +1,82 @@
-:root{
-  /* Palette sampled from your image */
-  --bg: #FEFBF6;         /* off-white */
-  --card: #FFF; 
-  --accent-1: #7E5A9B;   /* purple dark */
-  --accent-2: #C79FD2;   /* light purple */
-  --accent-3: #E9BCCF;   /* pink */
-  --accent-4: #BAD1B5;   /* soft green */
-  --muted: #6b6b6b;
-  --shadow: rgba(30,30,30,0.08);
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F8F5F0;
+  color: #3a2a4c;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:var(--bg);color:#222}
-a{color:var(--accent-1);text-decoration:none}
-.container{max-width:1100px;margin:0 auto;padding:20px}
-
-/* NAV */
-.header{
-  background:linear-gradient(90deg, rgba(199,159,210,0.10), rgba(126,90,155,0.06));
-  backdrop-filter: blur(2px);
-  padding:12px 0;
-  position:sticky; top:0; z-index:40;
-  box-shadow:0 2px 8px rgba(0,0,0,0.03);
+header {
+  background: linear-gradient(90deg, #C7A4D8, #7E5A9B);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
 }
-.nav{display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;gap:12px;align-items:center}
-.logo{width:56px;height:56px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent-2),var(--accent-1));color:#fff;font-weight:700}
-nav.links a{margin:0 12px;color:var(--muted);font-weight:600}
-nav.links a:hover{color:var(--accent-1)}
 
-/* HERO */
-.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:46px 0}
-.hero-left h1{font-size:40px;margin:0 0 12px;color:var(--accent-1)}
-.hero-left p{margin:0 0 18px;color:var(--muted);max-width:56ch}
-.cta{background:var(--accent-4);color:#fff;padding:12px 18px;border-radius:999px;font-weight:700;display:inline-block}
-.hero-card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 8px 30px var(--shadow)}
-
-/* PRODUCT GRID */
-.section-title{font-size:22px;color:var(--accent-1);margin:18px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-
-/* Product */
-.product{background:var(--card);border-radius:12px;overflow:hidden;box-shadow:0 8px 18px var(--shadow);display:flex;flex-direction:column}
-.product img{width:100%;height:200px;object-fit:cover;display:block}
-.pinfo{padding:12px;flex:1;display:flex;flex-direction:column;justify-content:space-between}
-.pinfo h4{margin:0 0 8px;color:#222}
-.price{color:var(--accent-1);font-weight:800;font-size:18px}
-.btn-sm{background:var(--accent-1);color:#fff;padding:8px 12px;border-radius:8px;display:inline-block;font-weight:700}
-
-/* LIST / TEXT SECTIONS */
-.card{background:var(--card);border-radius:10px;padding:20px;box-shadow:0 6px 18px var(--shadow);margin:12px 0}
-
-/* CONTACT / FOOTER */
-.contact{background:linear-gradient(180deg,var(--accent-2),var(--accent-1));color:#fff;padding:28px;border-radius:12px;margin-top:18px}
-footer{padding:28px 0;text-align:center;color:var(--muted)}
-
-/* responsive */
-@media (max-width:940px){
-  .hero{grid-template-columns:1fr; padding:26px 0}
-  .nav{padding:0 10px}
+header .logo {
+  display: flex;
+  align-items: center;
 }
+
+header img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(180deg, #7E5A9B, #C7A4D8);
+  color: white;
+}
+
+.btn {
+  background-color: #F8F5F0;
+  color: #7E5A9B;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.featured {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 250px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  border
