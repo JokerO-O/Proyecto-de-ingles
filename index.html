@@ -1,133 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Lazos Florales D' Amour</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lazos Florales D’Amour | Eternal Flowers</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo"><img src="images/logo.png" alt="logo" style="width:100%;height:100%;object-fit:cover"></div>
-        <div>
-          <div style="font-weight:800;color:var(--accent-1)">Lazos Florales D' Amour</div>
-          <div style="font-size:13px;color:var(--muted)">Exceptional floral arrangements • International shipping</div>
-        </div>
-      </div>
-      <nav class="links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="mission.html">Mission</a>
-        <a href="vision.html">Vision</a>
-        <a href="values.html">Values</a>
-        <a href="catalog.html">Catalog</a>
-        <a href="cart.html">Cart (<span class="cart-count">0</span>)</a>
-      </nav>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Lazos Florales D’Amour Logo">
+      <h1>Lazos Florales D’Amour</h1>
     </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="mission.html">Mission</a>
+      <a href="vision.html">Vision</a>
+      <a href="values.html">Values</a>
+      <a href="catalog.html">Catalog</a>
+      <a href="cart.html">Cart</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-left">
-        <h1>Lazos Florales D' Amour</h1>
-        <p>Exceptional floral arrangements filled with love, creativity, and sustainability. We design unique floral creations for weddings, anniversaries, corporate events and more — shipped locally and internationally.</p>
-        <a class="cta" href="catalog.html">See Catalog</a>
-      </div>
-      <div>
-        <div class="hero-card">
-          <img src="images/hero.png" alt="hero" style="width:100%;height:260px;object-fit:cover;border-radius:10px">
-          <h3 style="margin:12px 0 6px;color:var(--accent-1)">Featured — Box of 30 Eternal Flowers</h3>
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <div style="font-weight:800;color:var(--accent-1)">$55.00</div>
-            <a class="btn-sm" data-add-to-cart="p1">Add to Cart</a>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Exceptional Floral Creations</h2>
+      <p>Unique, elegant, and timeless arrangements designed with love, creativity, and sustainability.</p>
+      <a href="catalog.html" class="btn">Shop Now</a>
+    </div>
+  </section>
 
-    <h3 class="section-title">Popular Eternal Flowers</h3>
-    <div class="grid">
-      <!-- Product cards should match PRODUCTS in scripts.js -->
-      <div class="product">
-        <img src="images/flower1.jpg" alt="">
-        <div class="pinfo">
-          <div>
-            <h4>Eternal Rose Box - Classic</h4>
-            <div class="price">$45.00</div>
-          </div>
-          <div style="margin-top:12px">
-            <a class="btn-sm" data-add-to-cart="p1">Add to cart</a>
-            <a href="catalog.html" style="margin-left:8px">View</a>
-          </div>
-        </div>
+  <!-- FEATURED PRODUCTS -->
+  <section class="featured">
+    <h3>Popular Eternal Flowers</h3>
+    <div class="products">
+
+      <div class="card">
+        <img src="images/blue-bouquet.jpg" alt="Blue Eternal Bouquet">
+        <h4>Blue Eternal Bouquet</h4>
+        <p>$89.00</p>
+        <button>Add to Cart</button>
       </div>
 
-      <div class="product">
-        <img src="images/flower2.jpg" alt="">
-        <div class="pinfo">
-          <div>
-            <h4>Blue Eternal Bouquet</h4>
-            <div class="price">$38.00</div>
-          </div>
-          <div style="margin-top:12px">
-            <a class="btn-sm" data-add-to-cart="p2">Add to cart</a>
-            <a href="catalog.html" style="margin-left:8px">View</a>
-          </div>
-        </div>
+      <div class="card">
+        <img src="images/heart-box.jpg" alt="Heart-Shaped Red & Pink Box">
+        <h4>Heart-Shaped Red & Pink Box</h4>
+        <p>$60.00</p>
+        <button>Add to Cart</button>
       </div>
 
-      <div class="product">
-        <img src="images/flower3.jpg" alt="">
-        <div class="pinfo">
-          <div>
-            <h4>Heart-Shaped Red & Pink Box</h4>
-            <div class="price">$60.00</div>
-          </div>
-          <div style="margin-top:12px">
-            <a class="btn-sm" data-add-to-cart="p3">Add to cart</a>
-            <a href="catalog.html" style="margin-left:8px">View</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="product">
-        <img src="images/flower4.jpg" alt="">
-        <div class="pinfo">
-          <div>
-            <h4>Shiny Sunflowers - Set of 4</h4>
-            <div class="price">$30.00</div>
-          </div>
-          <div style="margin-top:12px">
-            <a class="btn-sm" data-add-to-cart="p4">Add to cart</a>
-            <a href="catalog.html" style="margin-left:8px">View</a>
-          </div>
-        </div>
+      <div class="card">
+        <img src="images/box-flowers.jpg" alt="Box of 30 Eternal Flowers">
+        <h4>Box of 30 Eternal Flowers</h4>
+        <p>$120.00</p>
+        <button>Add to Cart</button>
       </div>
 
     </div>
+  </section>
 
-    <section style="margin-top:28px">
-      <div class="card">
-        <h3>About Lazos Florales d'Amour</h3>
-        <p>Lazos Florales d'Amour is dedicated to designing, creating and selling floral arrangements for weddings, birthdays, anniversaries and corporate events. Our focus is offering high-quality products full of creativity, elegance and emotional meaning, highlighting our commitment to excellence, innovation and customer satisfaction locally and internationally.</p>
-        <a href="about.html">Read more</a>
-      </div>
-    </section>
+  <!-- ABOUT SECTION -->
+  <section class="about">
+    <h3>About Lazos Florales D’Amour</h3>
+    <p>
+      Lazos Florales D’Amour is dedicated to designing, creating, and selling floral arrangements for weddings,
+      birthdays, anniversaries, and corporate events. Our focus is on offering high-quality products full of creativity,
+      elegance, and emotional meaning — highlighting our commitment to excellence, innovation, and customer satisfaction
+      both locally and internationally.
+    </p>
+  </section>
 
-    <section class="contact">
-      <h3>Contact</h3>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-info">
       <p>📍 Santo Domingo, Dominican Republic</p>
-      <p>📞 +1 (809) 555-1234</p>
-      <p>📧 lazosfloralesdamour@gmail.com</p>
-    </section>
+      <p>📞 (809) 555-4324 | 📧 lazosfloralesdamour@gmail.com</p>
+    </div>
+    <p>© 2025 Lazos Florales D’Amour | Designed with 💜</p>
+  </footer>
 
-    <footer>
-      <small>© 2025 Lazos Florales D' Amour — Designed with love</small>
-    </footer>
-  </main>
-
-  <script src="scripts.js"></script>
 </body>
 </html>
