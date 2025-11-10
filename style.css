@@ -1,82 +1,235 @@
-body {
+/* === GENERAL === */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  background-color: #F8F5F0;
-  color: #3a2a4c;
 }
 
+body {
+  background-color: #fffdfc;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* === HEADER === */
 header {
-  background: linear-gradient(90deg, #C7A4D8, #7E5A9B);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: linear-gradient(90deg, #f4c2c2, #fce4ec);
   padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  flex-wrap: wrap;
 }
 
 header .logo {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
-header img {
-  width: 50px;
-  margin-right: 10px;
+header .logo img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+header h1 {
+  font-size: 1.4rem;
+  color: #5c3d2e;
+  font-weight: 600;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 nav a {
-  color: white;
   text-decoration: none;
-  margin: 0 10px;
+  color: #5c3d2e;
   font-weight: 500;
+  transition: 0.3s;
 }
 
 nav a:hover {
+  color: #b83b5e;
   text-decoration: underline;
 }
 
+/* === HERO === */
 .hero {
+  background: url('images/hero-bg.jpg') center/cover no-repeat;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(180deg, #7E5A9B, #C7A4D8);
+  padding: 0 20px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
   color: white;
+  max-width: 700px;
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
 }
 
 .btn {
-  background-color: #F8F5F0;
-  color: #7E5A9B;
-  padding: 10px 20px;
-  border-radius: 5px;
+  display: inline-block;
+  background: #b83b5e;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
+  transition: 0.3s;
 }
 
+.btn:hover {
+  background: #8e2650;
+}
+
+/* === FEATURED PRODUCTS === */
 .featured {
-  padding: 60px 20px;
+  padding: 60px 40px;
   text-align: center;
+  background-color: #fffafc;
+}
+
+.featured h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #5c3d2e;
 }
 
 .products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
-  margin-top: 20px;
 }
 
 .card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 250px;
-  padding: 15px;
-  text-align: center;
-  transition: transform 0.2s ease;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
 .card img {
   width: 100%;
-  border
+  border-radius: 12px;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.card h4 {
+  color: #5c3d2e;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.card p {
+  color: #b83b5e;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card button {
+  background: #b83b5e;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  background: #8e2650;
+}
+
+/* === ABOUT === */
+.about {
+  padding: 60px 40px;
+  background-color: #fdf3f6;
+  text-align: center;
+}
+
+.about h3 {
+  color: #5c3d2e;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #4a4a4a;
+  font-size: 1.05rem;
+}
+
+/* === FOOTER === */
+footer {
+  background: #5c3d2e;
+  color: #fce4ec;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+footer .footer-info p {
+  margin-bottom: 5px;
+}
+
+footer p:last-child {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .featured h3, .about h3 {
+    font-size: 1.6rem;
+  }
+}
