@@ -1,89 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lazos Florales D’Amour | Eternal Flowers</title>
+  <meta charset="utf-8" />
+  <title>Lazos Florales D’ Amour — Eternal Flowers</title>
+  <meta name="description" content="Lazos Florales D' Amour — Minimal, clean eternal flower shop. Local delivery across Dominican Republic." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles & script (external files in repo) -->
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script defer src="scripts.js"></script>
 </head>
-<body>
+<body data-theme="light">
 
-  <!-- HEADER -->
-  <header>
-    <div class="logo">
-      <img src="images/logo.png" alt="Lazos Florales D’Amour Logo">
-      <h1>Lazos Florales D’Amour</h1>
+  <!-- SITE HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container header-row">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img src="images/logo.png" alt="Lazos Florales D' Amour logo" style="width:100%;height:100%;object-fit:cover" />
+        </div>
+        <div class="brand-text">
+          <div class="brand-title">Lazos Florales D’ Amour</div>
+          <div class="brand-sub">Minimal • Timeless • Everlasting</div>
+        </div>
+      </div>
+
+      <nav class="nav" role="navigation" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="mission.html">Mission</a>
+        <a href="vision.html">Vision</a>
+        <a href="values.html">Values</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart (<span class="cart-count">0</span>)</a>
+        <button id="theme-toggle" class="icon-btn" title="Toggle dark / light mode" aria-pressed="false">🌓</button>
+      </nav>
     </div>
-
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="mission.html">Mission</a>
-      <a href="vision.html">Vision</a>
-      <a href="values.html">Values</a>
-      <a href="catalog.html">Catalog</a>
-      <a href="cart.html">Cart</a>
-    </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Exceptional Floral Creations</h2>
-      <p>Unique, elegant, and timeless arrangements designed with love, creativity, and sustainability.</p>
-      <a href="catalog.html" class="btn">Shop Now</a>
+  <!-- HERO: left text + right carousel -->
+  <section class="hero" role="region" aria-label="Featured">
+    <div class="container hero-grid">
+      <div class="hero-left">
+        <h1>Minimal. Pink. Beautiful.</h1>
+        <p class="lead">Clean, curated eternal flower arrangements — handcrafted with love, styled for every special moment. Local delivery across the Dominican Republic.</p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="catalog.html">Shop Catalog</a>
+          <a class="btn outline" href="#contact">Contact</a>
+        </div>
+
+        <div class="socials" aria-hidden="false">
+          <a class="social whatsapp" href="https://wa.me/573232367206?text=Hello%20Lazos%20Florales%20D%27%20Amour%2C%20I%27d%20like%20to%20order" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="social instagram" href="https://www.instagram.com/lazos_floreales_d_amour/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+
+        <p class="tiny-muted">Currency: <strong>DOP</strong> — Delivery: <strong>Dominican Republic only</strong></p>
+      </div>
+
+      <div class="hero-right">
+        <div class="carousel" id="carousel" aria-roledescription="carousel">
+          <div class="slides" role="list">
+            <img src="images/carousel1.jpg" class="slide" alt="Featured arrangement 1" role="listitem" />
+            <img src="images/carousel2.jpg" class="slide" alt="Featured arrangement 2" role="listitem" />
+            <img src="images/carousel3.jpg" class="slide" alt="Featured arrangement 3" role="listitem" />
+          </div>
+
+          <div class="carousel-controls" aria-hidden="true">
+            <button id="prev" aria-label="Previous slide">‹</button>
+            <button id="next" aria-label="Next slide">›</button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- FEATURED PRODUCTS -->
-  <section class="featured">
-    <h3>Popular Eternal Flowers</h3>
-    <div class="products">
+  <!-- FEATURED PRODUCTS PREVIEW -->
+  <main class="container main-content" role="main">
+    <section class="section">
+      <h2 class="section-title">Popular Eternal Flowers</h2>
 
-      <div class="card">
-        <img src="images/blue-bouquet.jpg" alt="Blue Eternal Bouquet">
-        <h4>Blue Eternal Bouquet</h4>
-        <p>$89.00</p>
-        <button>Add to Cart</button>
+      <div class="grid products" aria-live="polite">
+        <!-- Product 1 -->
+        <article class="product-card" aria-labelledby="p1-title">
+          <img src="images/flower-rose.jpg" alt="Eternal Rose Box" />
+          <div class="p-body">
+            <h3 id="p1-title">Eternal Rose Box</h3>
+            <div class="price">RD$ 2,500</div>
+            <p class="muted">Classic preserved roses in a premium gift box.</p>
+            <div class="p-actions">
+              <button class="btn-sm" data-add-to-cart="p1">Add to cart</button>
+              <a class="link" href="catalog.html">View all</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-card" aria-labelledby="p2-title">
+          <img src="images/flower-azure.jpg" alt="Azure Eternity Bouquet" />
+          <div class="p-body">
+            <h3 id="p2-title">Azure Eternity Bouquet</h3>
+            <div class="price">RD$ 2,100</div>
+            <p class="muted">18 blue preserved stems wrapped in Korean paper.</p>
+            <div class="p-actions">
+              <button class="btn-sm" data-add-to-cart="p2">Add to cart</button>
+              <a class="link" href="catalog.html">View all</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-card" aria-labelledby="p3-title">
+          <img src="images/flower-heart.jpg" alt="Heartfelt Harmony Box" />
+          <div class="p-body">
+            <h3 id="p3-title">Heartfelt Harmony Box</h3>
+            <div class="price">RD$ 3,300</div>
+            <p class="muted">Romantic heart-shaped arrangement of red & pink blooms.</p>
+            <div class="p-actions">
+              <button class="btn-sm" data-add-to-cart="p3">Add to cart</button>
+              <a class="link" href="catalog.html">View all</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Product 4 -->
+        <article class="product-card" aria-labelledby="p4-title">
+          <img src="images/flower-sunlit.jpg" alt="Sunlit Glamour Set" />
+          <div class="p-body">
+            <h3 id="p4-title">Sunlit Glamour Set</h3>
+            <div class="price">RD$ 1,600</div>
+            <p class="muted">Set of 4 handmade sunflowers with shiny accents.</p>
+            <div class="p-actions">
+              <button class="btn-sm" data-add-to-cart="p4">Add to cart</button>
+              <a class="link" href="catalog.html">View all</a>
+            </div>
+          </div>
+        </article>
       </div>
+    </section>
 
-      <div class="card">
-        <img src="images/heart-box.jpg" alt="Heart-Shaped Red & Pink Box">
-        <h4>Heart-Shaped Red & Pink Box</h4>
-        <p>$60.00</p>
-        <button>Add to Cart</button>
+    <!-- SHORT ABOUT -->
+    <section class="section about">
+      <h2>About Lazos Florales D’ Amour</h2>
+      <p>Lazos Florales d’Amour is a floral design studio dedicated to crafting everlasting floral arrangements for weddings, anniversaries, events and gifts. We pair minimal design with premium materials to create timeless pieces that last.</p>
+      <a class="link" href="about.html">Learn more about us</a>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact" aria-label="Contact">
+      <h2>Contact</h2>
+      <p>📍 Santo Domingo, Dominican Republic</p>
+      <p>📞 <a href="tel:+573232367206">+57 323 2367206</a></p>
+      <p>📧 <a href="mailto:finalproyecto597@gmail.com">finalproyecto597@gmail.com</a></p>
+      <div style="margin-top:12px">
+        <a class="btn outline" href="https://wa.me/573232367206?text=Hello%20Lazos%20Florales%20D%27%20Amour%2C%20I%27d%20like%20to%20order" target="_blank">Message on WhatsApp</a>
       </div>
-
-      <div class="card">
-        <img src="images/box-flowers.jpg" alt="Box of 30 Eternal Flowers">
-        <h4>Box of 30 Eternal Flowers</h4>
-        <p>$120.00</p>
-        <button>Add to Cart</button>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION -->
-  <section class="about">
-    <h3>About Lazos Florales D’Amour</h3>
-    <p>
-      Lazos Florales D’Amour is dedicated to designing, creating, and selling floral arrangements for weddings,
-      birthdays, anniversaries, and corporate events. Our focus is on offering high-quality products full of creativity,
-      elegance, and emotional meaning — highlighting our commitment to excellence, innovation, and customer satisfaction
-      both locally and internationally.
-    </p>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer>
-    <div class="footer-info">
-      <p>📍 Santo Domingo, Dominican Republic</p>
-      <p>📞 (809) 555-4324 | 📧 lazosfloralesdamour@gmail.com</p>
+  <footer role="contentinfo">
+    <div class="container footer-row">
+      <small>© 2025 Lazos Florales D’ Amour — All rights reserved</small>
+      <div class="footer-links">
+        <a href="catalog.html">Catalog</a>
+        <a href="mission.html">Mission</a>
+        <a href="vision.html">Vision</a>
+      </div>
     </div>
-    <p>© 2025 Lazos Florales D’Amour | Designed with 💜</p>
   </footer>
+
+  <!-- Toast container (scripts will create it) -->
+  <div id="lf-toast" aria-hidden="true" style="position:fixed;left:50%;transform:translateX(-50%);bottom:28px;background:#111;color:#fff;padding:10px 16px;border-radius:8px;opacity:0;transition:opacity .3s"></div>
 
 </body>
 </html>
