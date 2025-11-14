@@ -1,286 +1,268 @@
-/* ============================================================
-   🌸 LAZOS FLORALES D’AMOUR — ESTILOS PRINCIPALES
-   Elegante, minimalista, floral y estilo e-commerce premium
-   ============================================================ */
-
-/* -------- TIPOGRAFÍA -------- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-:root {
-    --primary: #7D1E6A;        /* Vino rosado elegante */
-    --secondary: #EEC9D2;      /* Rosa pastel suave */
-    --accent: #F8E8EE;         /* Crema floral */
-    --text-dark: #3B3030;      
-    --text-light: #ffffff;
-    --bg-light: #ffffff;
-    --bg-dark: #1d1d1d;        
-    --card-bg: #ffffff;
-    --shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-/* ------ MODO OSCURO ------ */
-body.dark {
-    background: var(--bg-dark);
-    color: var(--text-light);
-}
-
-body.dark header,
-body.dark footer,
-body.dark .card,
-body.dark .product-card {
-    background: #2a2a2a;
-    color: #fff;
-    box-shadow: none;
-}
-
-body.dark nav a {
-    color: #fff;
-}
-
-body.dark .mode-btn {
-    background: #fff;
-    color: #000;
-}
-
-/* -------- RESET -------- */
+/* ================================
+   RESET & BASE
+===================================*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
 }
 
 body {
-    font-family: "Poppins", sans-serif;
-    background: var(--bg-light);
-    color: var(--text-dark);
+    background-color: #fafafa;
+    color: #333;
     line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
 }
 
-/* -------- HEADER (tipo Amazon) -------- */
+/* DARK MODE */
+body.dark {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+}
+
+/* ================================
+   HEADER
+===================================*/
 header {
     width: 100%;
-    background: var(--primary);
-    padding: 15px 40px;
+    background: #ffffff;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--text-light);
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-header h1 {
-    font-size: 1.6rem;
-    font-weight: 600;
+body.dark header {
+    background: #222;
+    border-bottom: 1px solid #444;
+}
+
+header .logo {
+    height: 80px;
 }
 
 nav a {
     margin: 0 15px;
-    color: var(--text-light);
     text-decoration: none;
+    font-size: 16px;
+    color: #444;
     font-weight: 500;
 }
 
+body.dark nav a {
+    color: #ddd;
+}
+
 nav a:hover {
-    text-decoration: underline;
+    color: #e91e63;
 }
 
-/* -------- BOTÓN DARK MODE -------- */
-.mode-btn {
-    padding: 8px 14px;
-    background: var(--accent);
+/* Dark mode toggle */
+#theme-toggle {
+    padding: 8px 18px;
     border: none;
-    border-radius: 6px;
+    background: #e91e63;
+    color: white;
+    border-radius: 20px;
     cursor: pointer;
-    color: var(--primary);
-    font-weight: 600;
 }
 
-.mode-btn:hover {
-    background: var(--secondary);
+#theme-toggle:hover {
+    opacity: 0.8;
 }
 
-/* -------- HERO / CARRUSEL -------- */
+/* ================================
+   HERO IMAGE
+===================================*/
 .hero {
     width: 100%;
-    height: 350px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    margin-bottom: 30px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid #eee;
 }
 
-.hero img {
-    width: 100%;
-    height: 350px;
-    object-fit: cover;
+/* ================================
+   TITLES
+===================================*/
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
-/* -------- SECCIONES GENERALES -------- */
-section {
-    padding: 40px;
-}
-
-/* -------- CATÁLOGO -------- */
-.catalog {
+/* ================================
+   PRODUCT GRID
+===================================*/
+.products-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
+    padding-bottom: 50px;
 }
 
 .product-card {
-    background: var(--card-bg);
-    border-radius: 15px;
+    background: #fff;
     padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     text-align: center;
-    box-shadow: var(--shadow);
-    transition: .3s;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+body.dark .product-card {
+    background: #222;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .product-card img {
     width: 100%;
-    height: 260px;
+    height: 280px;
     object-fit: cover;
     border-radius: 12px;
 }
 
-.product-card:hover {
-    transform: scale(1.03);
-}
-
-.product-card button {
-    margin-top: 10px;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 6px;
-    background: var(--primary);
-    color: white;
-    cursor: pointer;
-    font-weight: 500;
-}
-
-.product-card button:hover {
-    background: #5f154f;
-}
-
-/* -------- PÁGINAS DE TEXTO (About/Mission/Vision/Values) -------- */
-.text-page {
-    max-width: 850px;
-    margin: auto;
-    background: var(--card-bg);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: var(--shadow);
-}
-
-.text-page h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--primary);
-}
-
-/* -------- CARRITO -------- */
-.cart-item {
-    display: flex;
-    background: var(--card-bg);
-    padding: 15px;
-    border-radius: 12px;
-    margin-bottom: 15px;
-    box-shadow: var(--shadow);
-    align-items: center;
-}
-
-.cart-img {
-    width: 110px;
-    height: 110px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-right: 15px;
-}
-
-.cart-info {
-    flex: 1;
-}
-
-.qty-control button {
-    background: var(--secondary);
-    border: none;
-    padding: 6px 12px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: bold;
-}
-
-.qty-control span {
-    margin: 0 10px;
+.product-name {
+    font-size: 20px;
     font-weight: 600;
+    margin: 10px 0;
 }
 
-.remove-btn {
-    background: #c0392b;
-    border: none;
-    color: #fff;
-    padding: 7px 12px;
-    border-radius: 6px;
-    cursor: pointer;
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #e91e63;
+    margin-bottom: 15px;
 }
 
-.clear-btn {
-    margin-top: 20px;
-    width: 100%;
-    padding: 12px;
-    background: var(--primary);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.clear-btn:hover {
-    background: #5f154f;
-}
-
-/* -------- POPUP -------- */
-.popup {
-    position: fixed;
-    top: -40px;
-    right: 20px;
-    background: var(--primary);
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #e91e63;
     color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    opacity: 0;
-    transition: .3s;
-    box-shadow: var(--shadow);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.popup.visible {
-    top: 20px;
-    opacity: 1;
+.btn:hover {
+    opacity: 0.8;
 }
 
-/* -------- FOOTER -------- */
-footer {
-    background: var(--primary);
-    padding: 20px;
+/* ================================
+   CATEGORY SECTION
+===================================*/
+.categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.category-box {
+    width: 250px;
+    height: 140px;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+body.dark .category-box {
+    background: #222;
+}
+
+.category-box:hover {
+    transform: translateY(-6px);
+    background: #e91e63;
+    color: white;
+}
+
+/* ================================
+   ABOUT SECTION
+===================================*/
+.about-text {
+    width: 70%;
+    margin: auto;
+    font-size: 18px;
     text-align: center;
+    padding: 20px 0 50px;
+}
+
+/* ================================
+   FOOTER
+===================================*/
+footer {
+    background: #111;
     color: white;
+    padding: 40px 20px;
     margin-top: 40px;
 }
 
-/* -------- RESPONSIVE -------- */
-@media (max-width: 600px) {
+footer .footer-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+footer a {
+    color: #e91e63;
+    text-decoration: none;
+}
+
+footer a:hover {
+    opacity: 0.7;
+}
+
+.social-buttons {
+    margin-top: 15px;
+}
+
+.social-buttons a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: #e91e63;
+    color: white;
+}
+
+/* ================================
+   RESPONSIVE
+===================================*/
+@media (max-width: 768px) {
     header {
         flex-direction: column;
         gap: 10px;
     }
+
     nav a {
-        margin: 0 8px;
-    }
-    .cart-item {
-        flex-direction: column;
-        text-align: center;
-    }
-    .cart-img {
-        margin-bottom: 10px;
+        margin: 6px;
+        font-size: 14px;
     }
 }
