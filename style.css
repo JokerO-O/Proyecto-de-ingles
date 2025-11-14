@@ -1,163 +1,286 @@
-/* ======= ESTILOS GENERALES ======= */
+/* ============================================================
+   🌸 LAZOS FLORALES D’AMOUR — ESTILOS PRINCIPALES
+   Elegante, minimalista, floral y estilo e-commerce premium
+   ============================================================ */
+
+/* -------- TIPOGRAFÍA -------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary: #7D1E6A;        /* Vino rosado elegante */
+    --secondary: #EEC9D2;      /* Rosa pastel suave */
+    --accent: #F8E8EE;         /* Crema floral */
+    --text-dark: #3B3030;      
+    --text-light: #ffffff;
+    --bg-light: #ffffff;
+    --bg-dark: #1d1d1d;        
+    --card-bg: #ffffff;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ------ MODO OSCURO ------ */
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-light);
+}
+
+body.dark header,
+body.dark footer,
+body.dark .card,
+body.dark .product-card {
+    background: #2a2a2a;
+    color: #fff;
+    box-shadow: none;
+}
+
+body.dark nav a {
+    color: #fff;
+}
+
+body.dark .mode-btn {
+    background: #fff;
+    color: #000;
+}
+
+/* -------- RESET -------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f5f5f5;
-    color: #333;
+    font-family: "Poppins", sans-serif;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
-/* ======= HEADER ======= */
+/* -------- HEADER (tipo Amazon) -------- */
 header {
-    background: #222;
-    color: #fff;
-    padding: 15px 0;
-}
-
-header .container {
-    width: 90%;
-    margin: auto;
+    width: 100%;
+    background: var(--primary);
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: var(--text-light);
 }
 
 header h1 {
-    font-size: 26px;
+    font-size: 1.6rem;
+    font-weight: 600;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a {
-    color: #fff;
+nav a {
+    margin: 0 15px;
+    color: var(--text-light);
     text-decoration: none;
-    font-size: 15px;
-    transition: 0.3s;
+    font-weight: 500;
 }
 
-nav ul li a:hover {
-    color: #ff9800;
+nav a:hover {
+    text-decoration: underline;
 }
 
-/* ======= CONTENEDORES ======= */
-.container {
-    width: 90%;
-    margin: 30px auto;
+/* -------- BOTÓN DARK MODE -------- */
+.mode-btn {
+    padding: 8px 14px;
+    background: var(--accent);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--primary);
+    font-weight: 600;
 }
 
-/* ======= CATÁLOGO ======= */
-.catalog-grid {
+.mode-btn:hover {
+    background: var(--secondary);
+}
+
+/* -------- HERO / CARRUSEL -------- */
+.hero {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.hero img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* -------- SECCIONES GENERALES -------- */
+section {
+    padding: 40px;
+}
+
+/* -------- CATÁLOGO -------- */
+.catalog {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 25px;
 }
 
 .product-card {
-    background: #fff;
+    background: var(--card-bg);
+    border-radius: 15px;
     padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
     text-align: center;
+    box-shadow: var(--shadow);
+    transition: .3s;
 }
 
 .product-card img {
     width: 100%;
-    height: 140px;
-    object-fit: contain;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
-.product-card h3 {
-    margin: 10px 0;
-    font-size: 18px;
-}
-
-.product-card p {
-    margin: 6px 0;
+.product-card:hover {
+    transform: scale(1.03);
 }
 
 .product-card button {
-    background: #ff9800;
+    margin-top: 10px;
+    padding: 10px 18px;
     border: none;
-    padding: 10px 20px;
-    margin-top: 50px;
-    cursor: pointer;
     border-radius: 6px;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
-    color: #fff;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
 }
 
 .product-card button:hover {
-    background: #e68900;
+    background: #5f154f;
 }
 
-/* ======= PÁGINAS DE TEXTO (about, mission, vision, values) ======= */
-.text-box {
-    background: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+/* -------- PÁGINAS DE TEXTO (About/Mission/Vision/Values) -------- */
+.text-page {
+    max-width: 850px;
+    margin: auto;
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
 }
 
-.text-box h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
+.text-page h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary);
 }
 
-.text-box p {
-    line-height: 1.6;
-    margin-bottom: 10px;
-}
-
-/* ======= VALORES ======= */
-.values-list {
-    margin-top: 15px;
-}
-
-.values-list li {
-    margin-bottom: 10px;
-    padding: 8px;
-    background: #fafafa;
-    border-left: 4px solid #ff9800;
-    border-radius: 4px;
-}
-
-/* ======= CARRITO ======= */
-.cart-box {
-    background: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
-}
-
+/* -------- CARRITO -------- */
 .cart-item {
     display: flex;
-    justify-content: space-between;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow);
+    align-items: center;
 }
 
-.cart-total {
-    margin-top: 20px;
-    text-align: right;
-    font-size: 18px;
+.cart-img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 15px;
+}
+
+.cart-info {
+    flex: 1;
+}
+
+.qty-control button {
+    background: var(--secondary);
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 6px;
     font-weight: bold;
 }
 
-/* ======= FOOTER ======= */
-footer {
-    background: #222;
-    padding: 15px 0;
-    margin-top: 40px;
-    text-align: center;
+.qty-control span {
+    margin: 0 10px;
+    font-weight: 600;
+}
+
+.remove-btn {
+    background: #c0392b;
+    border: none;
     color: #fff;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.clear-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.clear-btn:hover {
+    background: #5f154f;
+}
+
+/* -------- POPUP -------- */
+.popup {
+    position: fixed;
+    top: -40px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: .3s;
+    box-shadow: var(--shadow);
+}
+
+.popup.visible {
+    top: 20px;
+    opacity: 1;
+}
+
+/* -------- FOOTER -------- */
+footer {
+    background: var(--primary);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    nav a {
+        margin: 0 8px;
+    }
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cart-img {
+        margin-bottom: 10px;
+    }
 }
