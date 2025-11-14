@@ -1,99 +1,119 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Catalog — Lazos Florales D' Amour</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog - Floral Amazon</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <header class="header">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo"><img src="images/logo.png" alt="logo" style="width:100%;height:100%;object-fit:cover"></div>
-        <div><strong style="color:var(--accent-1)">Lazos Florales D' Amour</strong></div>
-      </div>
-      <nav class="links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="mission.html">Mission</a>
-        <a href="vision.html">Vision</a>
-        <a href="values.html">Values</a>
-        <a href="catalog.html">Catalog</a>
-        <a href="cart.html">Cart (<span class="cart-count">0</span>)</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="container">
-    <h2 class="section-title">Eternal Flowers Catalog</h2>
-    <p>Explore our selection of everlasting flowers — perfect for gifts, events, and long-lasting decoration.</p>
-
-    <div class="grid" style="margin-top:14px">
-      <!-- product cards (same ids as scripts.js) -->
-      <div class="product">
-        <img src="images/flower1.jpg" alt="">
-        <div class="pinfo">
-          <div>
-            <h4>Eternal Rose Box - Classic</h4>
-            <div class="price">$45.00</div>
-            <p style="color:var(--muted);margin-top:8px">Classic box with preserved roses, handcrafted wrapping and ribbon.</p>
-          </div>
-          <div style="margin-top:12px">
-            <a class="btn-sm" data-add-to-cart="p1">Add to cart</a>
-          </div>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="Lazos Floreales Logo">
+            <h1>Lazos Florales D’Amour</h1>
         </div>
-      </div>
 
-      <div class="product">
-        <img src="images/flower2.jpg" alt="">
-        <div class="pinfo">
-          <div>
-            <h4>Blue Eternal Bouquet</h4>
-            <div class="price">$38.00</div>
-            <p style="color:var(--muted);margin-top:8px">18 blue preserved stems wrapped in Korean paper.</p>
-          </div>
-          <div style="margin-top:12px">
-            <a class="btn-sm" data-add-to-cart="p2">Add to cart</a>
-          </div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="catalog.html" class="active">Catalog</a>
+            <a href="contact.html">Contact</a>
+
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="catalog-container">
+
+        <h2 class="catalog-title">Our Floral Collection</h2>
+        <p class="catalog-description">
+            Explore our curated selection of elegant floral arrangements crafted with love and passion.
+        </p>
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card">
+                <img src="images/floral1.jpg" alt="Rose Harmony Bouquet">
+                <h3>Rose Harmony Bouquet</h3>
+                <p class="price">DOP 2,200</p>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card">
+                <img src="images/floral2.jpg" alt="Sunset Tulip Bloom">
+                <h3>Sunset Tulip Bloom</h3>
+                <p class="price">DOP 1,950</p>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card">
+                <img src="images/floral3.jpg" alt="Orchid Elegance Vase">
+                <h3>Orchid Elegance Vase</h3>
+                <p class="price">DOP 3,400</p>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- PRODUCT 4 -->
+            <div class="product-card">
+                <img src="images/floral4.jpg" alt="Peony Soft Pink Delight">
+                <h3>Peony Soft Pink Delight</h3>
+                <p class="price">DOP 2,800</p>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- PRODUCT 5 -->
+            <div class="product-card">
+                <img src="images/floral5.jpg" alt="Garden Love Basket">
+                <h3>Garden Love Basket</h3>
+                <p class="price">DOP 2,600</p>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- PRODUCT 6 -->
+            <div class="product-card">
+                <img src="images/floral6.jpg" alt="Romantic Lavender Dream">
+                <h3>Romantic Lavender Dream</h3>
+                <p class="price">DOP 2,150</p>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- PRODUCT 7 -->
+            <div class="product-card">
+                <img src="images/floral7.jpg" alt="Royal Red Rose Box">
+                <h3>Royal Red Rose Box</h3>
+                <p class="price">DOP 3,800</p>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
+            <!-- PRODUCT 8 -->
+            <div class="product-card">
+                <img src="images/floral8.jpg" alt="Blooming Spring Mix">
+                <h3>Blooming Spring Mix</h3>
+                <p class="price">DOP 2,300</p>
+                <button class="buy-btn">Add to Cart</button>
+            </div>
+
         </div>
-      </div>
+    </main>
 
-      <div class="product">
-        <img src="images/flower3.jpg" alt="">
-        <div class="pinfo">
-          <div>
-            <h4>Heart-Shaped Red & Pink Box</h4>
-            <div class="price">$60.00</div>
-            <p style="color:var(--muted);margin-top:8px">Red and pink arrangement shaped like a heart — romantic gift.</p>
-          </div>
-          <div style="margin-top:12px">
-            <a class="btn-sm" data-add-to-cart="p3">Add to cart</a>
-          </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 Lazos Floreales D’Amour — All Rights Reserved</p>
+
+        <div class="social">
+            <a class="whatsapp" href="https://wa.me/573232367206" target="_blank">WhatsApp</a>
+            <a class="instagram" href="https://www.instagram.com/lazos_floreales_d_amour/" target="_blank">Instagram</a>
         </div>
-      </div>
-
-      <div class="product">
-        <img src="images/flower4.jpg" alt="">
-        <div class="pinfo">
-          <div>
-            <h4>Shiny Sunflowers - Set of 4</h4>
-            <div class="price">$30.00</div>
-            <p style="color:var(--muted);margin-top:8px">Handmade sunflowers with shiny details — ideal for celebrations.</p>
-          </div>
-          <div style="margin-top:12px">
-            <a class="btn-sm" data-add-to-cart="p4">Add to cart</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <footer style="margin-top:28px">
-      <small>© 2025 Lazos Florales D' Amour</small>
     </footer>
-  </main>
 
-  <script src="scripts.js"></script>
+    <!-- THEME SCRIPT -->
+    <script src="theme.js"></script>
+
 </body>
 </html>
