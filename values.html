@@ -1,28 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><title>Values</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Values - Lazos Florales D’Amour</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<header class="header"><div class="container nav">
-  <div class="brand"><div class="logo"><img src="images/logo.png" alt="logo" style="width:100%;height:100%;object-fit:cover"></div><div><strong style="color:var(--accent-1)">Lazos Florales D' Amour</strong></div></div>
-  <nav class="links"><a href="index.html">Home</a><a href="about.html">About</a><a href="mission.html">Mission</a><a href="vision.html">Vision</a><a href="values.html">Values</a><a href="catalog.html">Catalog</a><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></nav>
-</div></header>
 
-<main class="container">
-  <h2 class="section-title">Values</h2>
-  <div class="card">
-    <ul style="text-align:left">
-      <li><strong>Passion for Excellence</strong> — We pursue superior quality and creativity in every arrangement.</li>
-      <li><strong>Integrity and Trust</strong> — We act honestly, transparently and ethically.</li>
-      <li><strong>Innovation and Creativity</strong> — We continuously explore new designs and sustainable techniques.</li>
-      <li><strong>Commitment to Sustainability</strong> — We prioritize responsible sourcing and eco-friendly packaging.</li>
-    </ul>
-  </div>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="Lazos Florales Logo">
+            <h1>Lazos Florales D’Amour</h1>
+        </div>
 
-  <footer style="margin-top:28px"><small>© 2025 Lazos Florales D' Amour</small></footer>
-</main>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="about.html">About</a>
+            <a href="mission.html">Mission</a>
+            <a href="vision.html">Vision</a>
+            <a href="values.html" class="active">Values</a>
+            <a href="contact.html">Contact</a>
 
-<script src="scripts.js"></script>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+        </nav>
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="about-container">
+
+        <section class="about-hero">
+            <h2>Our Values</h2>
+            <p>The principles that guide every creation we craft with love.</p>
+        </section>
+
+        <section class="values-section">
+
+            <div class="value-card">
+                <h3>🌸 Excellence</h3>
+                <p>
+                    We pursue the highest standards of quality and creativity.  
+                    Every floral design is crafted with precision, passion, and dedication.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>🤍 Integrity & Trust</h3>
+                <p>
+                    We conduct our business honestly, transparently, and ethically, ensuring 
+                    trust in every interaction with our clients.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>✨ Innovation & Creativity</h3>
+                <p>
+                    We constantly explore new ideas and techniques to reinvent floral artistry 
+                    and deliver unique, unforgettable arrangements.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>🌿 Sustainability</h3>
+                <p>
+                    We are committed to eco-friendly practices, responsible sourcing, 
+                    and sustainable floral craftsmanship.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>💐 Customer Care</h3>
+                <p>
+                    Our customers’ happiness inspires our work.  
+                    We create emotional experiences that brighten lives and celebrate meaningful moments.
+                </p>
+            </div>
+
+        </section>
+
+        <div class="values-image">
+            <img src="images/values-flowers.jpg" alt="Elegant Floral Values Image">
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 Lazos Florales D’Amour — All Rights Reserved</p>
+
+        <div class="social">
+            <a class="whatsapp" href="https://wa.me/573232367206" target="_blank">WhatsApp</a>
+            <a class="instagram" href="https://www.instagram.com/lazos_floreales_d_amour/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="theme.js"></script>
+
 </body>
 </html>
