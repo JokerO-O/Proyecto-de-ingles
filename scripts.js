@@ -1,87 +1,156 @@
-/* Simple cart using localStorage.
-   Products are represented by id, name, price, img.
-   Add to cart buttons must have data-id attributes.
-*/
+/* ===========================================================
+   🌸 LAZOS FLOREALES D’AMOUR - SCRIPT PRINCIPAL
+   Mejoras: Carrito profesional con cantidades, total dinámico y controles
+   ============================================================ */
 
-const PRODUCTS = [
-  {id: "p1", name: "Eternal Rose Box - Classic", price: 45, img: "images/flower1.jpg"},
-  {id: "p2", name: "Blue Eternal Bouquet", price: 38, img: "images/flower2.jpg"},
-  {id: "p3", name: "Heart-Shaped Red & Pink Box", price: 60, img: "images/flower3.jpg"},
-  {id: "p4", name: "Shiny Sunflowers - Set of 4", price: 30, img: "images/flower4.jpg"}
-];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-function getCart(){ return JSON.parse(localStorage.getItem('lf_cart')||'{}') }
-
-function saveCart(cart){ localStorage.setItem('lf_cart', JSON.stringify(cart)) }
-
-function addToCart(productId, qty=1){
-  const cart = getCart();
-  cart[productId] = (cart[productId]||0) + qty;
-  saveCart(cart);
-  alert("Added to cart");
-  updateCartCount();
+/* -------------------------
+   🔧 Guardar Carrito
+-------------------------- */
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function updateCartCount(){
-  const cart = getCart();
-  const count = Object.values(cart).reduce((s,n)=>s+n,0);
-  document.querySelectorAll('.cart-count').forEach(el => el.textContent = count);
+/* -------------------------
+   ➕ Agregar al Carrito
+-------------------------- */
+function addToCart(name, price, image) {
+    const existing = cart.find(item => item.name === name);
+
+    if (existing) {
+        existing.quantity++;
+    } else {
+        cart.push({
+            name,
+            price,
+            quantity: 1,
+            image: image || ""
+        });
+    }
+
+    saveCart();
+    showPopup(`${name} added to cart!`);
 }
 
-function renderCartPage(){
-  const cartEl = document.getElementById('cart-items');
-  if(!cartEl) return;
-  const cart = getCart();
-  cartEl.innerHTML = '';
-  let total=0;
-  for(const [id, qty] of Object.entries(cart)){
-    const prod = PRODUCTS.find(p=>p.id===id);
-    if(!prod) continue;
-    const lineTotal = prod.price * qty;
-    total += lineTotal;
-    const div = document.createElement('div');
-    div.className='card';
-    div.innerHTML = `
-      <div style="display:flex;gap:12px;align-items:center">
-        <img src="${prod.img}" style="width:90px;height:70px;object-fit:cover;border-radius:8px">
-        <div style="flex:1">
-          <strong>${prod.name}</strong>
-          <div>$${prod.price.toFixed(2)} × ${qty} = $${lineTotal.toFixed(2)}</div>
-        </div>
-        <div>
-          <button onclick="changeQty('${id}', -1)">-</button>
-          <button onclick="changeQty('${id}', 1)">+</button>
-          <button onclick="removeItem('${id}')" style="margin-left:8px">Remove</button>
-        </div>
-      </div>
-    `;
-    cartEl.appendChild(div);
-  }
-  document.getElementById('cart-total').textContent = `$${total.toFixed(2)}`;
+/* -------------------------
+   📦 Cargar Carrito
+-------------------------- */
+function loadCart() {
+    const cartContainer = document.getElementById("cart-items");
+    const totalContainer = document.getElementById("cart-total");
+
+    if (!cartContainer || !totalContainer) return;
+
+    cartContainer.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        let div = document.createElement("div");
+        div.classList.add("cart-item");
+
+        div.innerHTML = `
+            <img src="${item.image}" class="cart-img"/>
+
+            <div class="cart-info">
+                <h4>${item.name}</h4>
+                <p>$${item.price.toFixed(2)}</p>
+
+                <div class="qty-control">
+                    <button onclick="changeQty(${index}, -1)">−</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="changeQty(${index}, 1)">+</button>
+                </div>
+            </div>
+
+            <div class="cart-actions">
+                <p class="item-total">$${itemTotal.toFixed(2)}</p>
+                <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+            </div>
+        `;
+
+        cartContainer.appendChild(div);
+    });
+
+    totalContainer.innerText = "$" + total.toFixed(2);
 }
 
-function changeQty(id, delta){
-  const cart = getCart();
-  cart[id] = Math.max(0,(cart[id]||0)+delta);
-  if(cart[id]===0) delete cart[id];
-  saveCart(cart);
-  renderCartPage();
-  updateCartCount();
+/* -------------------------
+   🔢 Cambiar Cantidad
+-------------------------- */
+function changeQty(index, amount) {
+    cart[index].quantity += amount;
+
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+
+    saveCart();
+    loadCart();
 }
 
-function removeItem(id){
-  const cart = getCart();
-  delete cart[id];
-  saveCart(cart);
-  renderCartPage();
-  updateCartCount();
+/* -------------------------
+   ❌ Eliminar un Producto
+-------------------------- */
+function removeItem(index) {
+    cart.splice(index, 1);
+    saveCart();
+    loadCart();
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
-  // attach add-to-cart handlers
-  document.querySelectorAll('[data-add-to-cart]').forEach(btn=>{
-    btn.addEventListener('click', ()=> addToCart(btn.dataset.addToCart, 1));
-  });
-  updateCartCount();
-  renderCartPage();
+/* -------------------------
+   🗑 Vaciar Todo
+-------------------------- */
+function clearCart() {
+    if (confirm("Are you sure you want to empty your cart?")) {
+        cart = [];
+        saveCart();
+        loadCart();
+    }
+}
+
+/* -------------------------
+   🎀 Popup de Confirmación
+-------------------------- */
+function showPopup(message) {
+    const popup = document.createElement("div");
+    popup.className = "popup";
+    popup.innerText = message;
+
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+        popup.classList.add("visible");
+    }, 50);
+
+    setTimeout(() => {
+        popup.classList.remove("visible");
+        setTimeout(() => popup.remove(), 300);
+    }, 2000);
+}
+
+/* -------------------------
+   🔦 Modo Oscuro / Claro
+-------------------------- */
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+
+    const mode = document.body.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", mode);
+}
+
+/* -------------------------
+   🔦 Cargar Tema Guardado
+-------------------------- */
+document.addEventListener("DOMContentLoaded", () => {
+    let theme = localStorage.getItem("theme");
+    if (theme === "dark") {
+        document.body.classList.add("dark");
+    }
+
+    loadCart();
 });
