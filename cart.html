@@ -1,29 +1,110 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><title>Cart</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Lazos Florales D’Amour</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<header class="header"><div class="container nav">
-  <div class="brand"><div class="logo"><img src="images/logo.png" alt="logo" style="width:100%;height:100%;object-fit:cover"></div><div><strong style="color:var(--accent-1)">Lazos Florales D' Amour</strong></div></div>
-  <nav class="links"><a href="index.html">Home</a><a href="catalog.html">Catalog</a><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></nav>
-</div></header>
 
-<main class="container">
-  <h2 class="section-title">Your Cart</h2>
-  <div id="cart-items"></div>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="Lazos Florales Logo">
+            <h1>Lazos Florales D’Amour</h1>
+        </div>
 
-  <div class="card" style="margin-top:12px;display:flex;justify-content:space-between;align-items:center">
-    <div><strong>Total:</strong> <span id="cart-total">$0.00</span></div>
-    <div>
-      <button onclick="localStorage.removeItem('lf_cart'); location.reload();" style="padding:8px 12px;border-radius:8px">Clear cart</button>
-      <button onclick="alert('This is a demo checkout. Implement server-side to process payments.')" style="padding:8px 12px;border-radius:8px;background:var(--accent-1);color:#fff;margin-left:8px">Checkout</button>
-    </div>
-  </div>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="about.html">About</a>
+            <a href="mission.html">Mission</a>
+            <a href="vision.html">Vision</a>
+            <a href="values.html">Values</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html" class="active">Cart</a>
 
-  <footer style="margin-top:28px"><small>© 2025 Lazos Florales D' Amour</small></footer>
-</main>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+        </nav>
+    </header>
 
-<script src="scripts.js"></script>
+    <!-- MAIN -->
+    <main class="cart-container">
+
+        <h2 class="cart-title">Your Shopping Cart</h2>
+
+        <div id="cart-items" class="cart-items"></div>
+
+        <div class="cart-summary">
+            <h3>Total: <span id="cart-total">DOP 0</span></h3>
+            <button class="checkout-btn">Proceed to Checkout</button>
+            <a href="catalog.html" class="continue-btn">Continue Shopping</a>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 Lazos Florales D’Amour — All Rights Reserved</p>
+
+        <div class="social">
+            <a class="whatsapp" href="https://wa.me/573232367206" target="_blank">WhatsApp</a>
+            <a class="instagram" href="https://www.instagram.com/lazos_floreales_d_amour/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="theme.js"></script>
+
+    <!-- CART SCRIPT -->
+    <script>
+        // Load cart from localStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        const cartContainer = document.getElementById("cart-items");
+        const totalDisplay = document.getElementById("cart-total");
+
+        function renderCart() {
+            cartContainer.innerHTML = "";
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = "<p class='empty-cart'>Your cart is empty 💐</p>";
+                totalDisplay.textContent = "DOP 0";
+                return;
+            }
+
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price;
+
+                const itemElement = document.createElement("div");
+                itemElement.classList.add("cart-item");
+
+                itemElement.innerHTML = `
+                    <img src="${item.image}" class="cart-img" alt="${item.name}">
+                    <div class="cart-info">
+                        <h4>${item.name}</h4>
+                        <p class="price">DOP ${item.price.toLocaleString()}</p>
+                    </div>
+                    <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                `;
+
+                cartContainer.appendChild(itemElement);
+            });
+
+            totalDisplay.textContent = "DOP " + total.toLocaleString();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            renderCart();
+        }
+
+        renderCart();
+    </script>
+
 </body>
 </html>
