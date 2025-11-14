@@ -1,23 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><title>Mission</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Mission - Lazos Floreales D’Amour</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-<header class="header"><div class="container nav">
-  <div class="brand"><div class="logo"><img src="images/logo.png" alt="logo" style="width:100%;height:100%;object-fit:cover"></div><div><strong style="color:var(--accent-1)">Lazos Florales D' Amour</strong></div></div>
-  <nav class="links"><a href="index.html">Home</a><a href="about.html">About</a><a href="mission.html">Mission</a><a href="vision.html">Vision</a><a href="values.html">Values</a><a href="catalog.html">Catalog</a><a href="cart.html">Cart (<span class="cart-count">0</span>)</a></nav>
-</div></header>
 
-<main class="container">
-  <h2 class="section-title">Mission</h2>
-  <div class="card">
-    <p>At Lazos Florales d’Amour, our mission is to create moments of beauty and joy, sharing the magic of flowers with the world. We are dedicated to designing and delivering exceptional floral arrangements, full of love and creativity, that inspire emotions and celebrate our clients’ most special life moments worldwide.</p>
-  </div>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="images/logo.png" alt="Lazos Florales Logo">
+            <h1>Lazos Floreales D’Amour</h1>
+        </div>
 
-  <footer style="margin-top:28px"><small>© 2025 Lazos Florales D' Amour</small></footer>
-</main>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="catalog.html">Catalog</a>
+            <a href="about.html">About</a>
+            <a href="mission.html" class="active">Mission</a>
+            <a href="vision.html">Vision</a>
+            <a href="values.html">Values</a>
+            <a href="contact.html">Contact</a>
 
-<script src="scripts.js"></script>
+            <button id="theme-toggle" class="theme-btn">🌙</button>
+        </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main class="about-container">
+
+        <section class="about-hero">
+            <h2>Our Mission</h2>
+            <p>Creating unforgettable moments through flowers crafted with love.</p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-text">
+                <h3>What Drives Us</h3>
+                <p>
+                    At <strong>Lazos Floreales D’Amour</strong>, our mission is to bring beauty, joy, and emotion 
+                    to the world through exceptional floral designs.  
+                </p>
+
+                <p>
+                    We create arrangements that inspire feelings, celebrate special occasions, and transform
+                    moments into memories. Each bouquet is handcrafted with passion, creativity, and elegance.
+                </p>
+
+                <h3>We Are Committed To:</h3>
+
+                <ul>
+                    <li>Designing premium floral arrangements</li>
+                    <li>Delivering beauty infused with love and meaning</li>
+                    <li>Expressing emotions through thoughtful compositions</li>
+                    <li>Providing high-quality service and attention to detail</li>
+                    <li>Celebrating moments of joy, love, and appreciation</li>
+                </ul>
+
+                <p>
+                    Our purpose goes beyond selling flowers —  
+                    <strong>we create experiences.</strong>
+                </p>
+            </div>
+
+            <div class="about-image">
+                <img src="images/mission-flowers.jpg" alt="Mission Floral Arrangement">
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2025 Lazos Floreales D’Amour — All Rights Reserved</p>
+
+        <div class="social">
+            <a class="whatsapp" href="https://wa.me/573232367206" target="_blank">WhatsApp</a>
+            <a class="instagram" href="https://www.instagram.com/lazos_floreales_d_amour/" target="_blank">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="theme.js"></script>
+
 </body>
 </html>
